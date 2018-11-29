@@ -39,7 +39,7 @@ class RedFlags(Resource):
             "data" : success_message
         }), 201)
 
-         def get(self):
+    def get(self):
 
         return make_response(jsonify({
             "status" : 200,
