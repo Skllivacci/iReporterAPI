@@ -45,4 +45,19 @@ class RedFlags(Resource):
             "status" : 200,
             "data" : self.db
         }), 200) 
+
+
+class RedFlag(Resource):
+    """docstring of RedFlag"""
+    def __init__(self):
+        self.db = incidents
+        self.id = len(incidents) + 1
+    def get(self, redflag_id):
+
+        for incident in incidents:
+            if incident['id'] == redflag_id:
+                return make_response(jsonify({
+                    "status" : 200,
+                    "data" : incident
+                }), 200)
        
